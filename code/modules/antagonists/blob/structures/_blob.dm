@@ -238,6 +238,11 @@
 		return ..()
 
 /obj/structure/blob/proc/chemeffectreport(mob/user)
+<<<<<<< HEAD
+=======
+	RETURN_TYPE(/list)
+	. = list()
+>>>>>>> 64460ae3ca... Merge pull request #44825 from AutomaticFrenzy/patch/lints
 	if(overmind)
 		to_chat(user, "<b>Material: <font color=\"[overmind.blobstrain.color]\">[overmind.blobstrain.name]</font><span class='notice'>.</span></b>")
 		to_chat(user, "<b>Material Effects:</b> <span class='notice'>[overmind.blobstrain.analyzerdescdamage]</span>")
@@ -246,9 +251,17 @@
 		to_chat(user, "<b>No Material Detected!</b><br>")
 
 /obj/structure/blob/proc/typereport(mob/user)
+<<<<<<< HEAD
 	to_chat(user, "<b>Blob Type:</b> <span class='notice'>[uppertext(initial(name))]</span>")
 	to_chat(user, "<b>Health:</b> <span class='notice'>[obj_integrity]/[max_integrity]</span>")
 	to_chat(user, "<b>Effects:</b> <span class='notice'>[scannerreport()]</span>")
+=======
+	RETURN_TYPE(/list)
+	return list("<b>Blob Type:</b> <span class='notice'>[uppertext(initial(name))]</span>",
+							"<b>Health:</b> <span class='notice'>[obj_integrity]/[max_integrity]</span>",
+							"<b>Effects:</b> <span class='notice'>[scannerreport()]</span>")
+
+>>>>>>> 64460ae3ca... Merge pull request #44825 from AutomaticFrenzy/patch/lints
 
 /obj/structure/blob/attack_animal(mob/living/simple_animal/M)
 	if(ROLE_BLOB in M.faction) //sorry, but you can't kill the blob as a blobbernaut
